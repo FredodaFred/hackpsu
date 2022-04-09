@@ -1,12 +1,17 @@
 import logo from './logo.svg';
 import Landingpage from './components/landing-page';
+import ClassReview from './components/class-review';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Landingpage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path = '/' element={<Landingpage/>}></Route>
+        <Route exact path = "/classreview/" element={ <ClassReview/> }></Route>
+      </Routes>
+    </Router>
   );
 }
 
