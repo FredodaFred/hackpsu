@@ -10,21 +10,30 @@ const ClassReview = () => {
   return (
     <>
       <div className="d-flex flex-column align-items-center">
-        <h1>Class Review</h1>
-        <h1>{`${ subjectStr } ${location.state.number}`}</h1>
+        <Title/>
+        <h1>Class Review: {`${ subjectStr } ${location.state.number}`}</h1>
       </div>
       <ReviewComponent/>
     </>
   );
 };
-
+const Title = () => {
+  return (
+    <>
+      <div className="d-flex flex-column align-items-center " >
+          <h1>CourseGossip</h1>
+          <p>Insert Slogan Here</p>
+      </div>
+    </>
+  );
+};
 const ReviewComponent = () =>{
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000")
+    fetch("http://localhost:5000/")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -32,6 +41,7 @@ const ReviewComponent = () =>{
         throw response;
       })
       .then((data) => {
+        console.log(data)
         setData(data);
       })
       .catch((error) => {
@@ -48,6 +58,7 @@ const ReviewComponent = () =>{
 
   return(
     <>
+    {data.dummy}
     </>
   )
 }

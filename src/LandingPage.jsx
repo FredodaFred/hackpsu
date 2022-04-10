@@ -73,9 +73,12 @@ const SearchClass = () => {
             />
           </div>
         </form>
-        <button type="submit" onClick={submitHandler}>
-          What's the tea?
-        </button>
+        <div className="d-flex flex-column align-items-center">
+          <button type="submit" onClick={submitHandler}>
+            What's the tea?
+          </button>
+        </div>
+
       </div>
     </>
   );
