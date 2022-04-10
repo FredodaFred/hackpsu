@@ -1,6 +1,5 @@
-import { toBeRequired } from "@testing-library/jest-dom/dist/matchers";
-import React, { Component, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { useRef } from "react";
 
 const Landingpage = () => {
   return (
@@ -45,13 +44,13 @@ const SearchClass = () => {
             className="input-group input-group-sm"
             style={{ marginTop: "5%" }}
           >
-            <span class="input-group-text" id="inputGroup-sizing-sm">
+            <span className="input-group-text" id="inputGroup-sizing-sm">
               Enter University
             </span>
             <input
               id="uni"
               type="text"
-              class="form-control"
+              className="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-lg"
             ></input>
@@ -62,14 +61,14 @@ const SearchClass = () => {
               ref={subjectRef}
               id="subject"
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Course Subject"
             />
             <input
               ref={numberRef}
               id="number"
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Course Number"
             />
           </div>

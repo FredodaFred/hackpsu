@@ -1,7 +1,6 @@
-import React, { Component } from "react";
 import { useLocation } from "react-router-dom";
 
-const ClassReview = ({ subject, number }) => {
+const ClassReview = () => {
   const location = useLocation();
   return (
     <>
