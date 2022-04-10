@@ -11,9 +11,28 @@ const ClassReview = () => {
     <>
       <div className="d-flex flex-column align-items-center">
         <Title/>
+
+
         <h1>Class Review: {`${ subjectStr } ${location.state.number}`}</h1>
+        <div style={{marginTop:'5%'}}>
+          <h1>Overall Course Description</h1>
+          <p>CMPSC 465 is a data structures and algorithm course that teaches you the fundamentals of
+            algorithm design and analysis
+          </p>
+          <h1>Professors Who Teach This Class</h1>
+          <li>
+            <div>
+              <h1>Professor: David Koslicki</h1>
+              <p>Sentiment Analysis: 3/5</p>
+              <p>Most Helpful Review: </p>
+              <p>I thought professor koslicki was a nice guy. He actually incredibly incompetent!</p>
+              <p>Source/more reviews: https://ratemyprofessor/davidkoslicki</p>
+              <p>Source/more reviews: https://reddit/pennstate/davidkoslickiforcmpsc465</p>
+            </div>
+          </li>
       </div>
-      <ReviewComponent/>
+    </div>
+
     </>
   );
 };
@@ -22,7 +41,7 @@ const Title = () => {
     <>
       <div className="d-flex flex-column align-items-center " >
           <h1>CourseGossip</h1>
-          <p>Insert Slogan Here</p>
+          <p>Less time research um more time um coding</p>
       </div>
     </>
   );
@@ -32,6 +51,7 @@ const ReviewComponent = () =>{
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  var profs = []
   useEffect(() => {
     fetch("http://localhost:5000/")
       .then((response) => {
@@ -43,6 +63,7 @@ const ReviewComponent = () =>{
       .then((data) => {
         console.log(data)
         setData(data);
+        profs = data.dummy.professors
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -58,7 +79,9 @@ const ReviewComponent = () =>{
 
   return(
     <>
-    {data.dummy}
+    <div>
+      hello
+    </div>
     </>
   )
 }

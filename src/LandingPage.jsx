@@ -14,7 +14,7 @@ const Title = () => {
     <>
       <div className="d-flex flex-column align-items-center ">
         <h1>CourseGossip</h1>
-        <p>Insert Slogan Here</p>
+        <p>Less time research um more time um coding</p>
         <SearchClass />
       </div>
     </>
